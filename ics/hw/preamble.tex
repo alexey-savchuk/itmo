@@ -1,0 +1,174 @@
+% -- document classes --
+\usepackage{extsizes}
+
+% -- embed other PDFs --
+\usepackage{pdfpages}
+
+% -- fonts and encoding --
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+
+\usepackage[
+    english,
+    russian,
+]{babel}
+\usepackage{csquotes}
+
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% -- margins --
+\usepackage[
+    left=30mm,
+    right=10mm,
+    top=20mm,
+    bottom=20mm,
+    nohead,
+    includefoot,
+    footskip=10mm,
+]{geometry}
+
+% -- spacing --
+\usepackage{setspace}
+\onehalfspacing
+
+% -- indentation --
+\usepackage{indentfirst}
+\setlength\parindent{1.25cm}
+
+% -- titles --
+\usepackage{titlesec}
+
+\titleformat{\section}
+    {\fontsize{18}{18}\bfseries}
+    {\thesection.}
+    {0.5em}
+    {\centering}
+
+\titleformat{\subsection}
+    {\fontsize{16}{16}\bfseries}
+    {\thesubsection.}
+    {0.5em}
+    {\centering}
+
+\titleformat{\subsubsection}
+    {\fontsize{14}{14}\itshape}
+    {\thesubsubsection.}
+    {0.5em}
+    {\centering}
+
+% -- table of contents --
+\addto\captionsrussian{\renewcommand{\contentsname}{СОДЕРЖАНИЕ}}
+
+\usepackage{tocloft}
+
+\renewcommand{\cfttoctitlefont}{\hfil\fontsize{18}{18}\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfil}
+
+\renewcommand{\cftsecfont}{\normalfont}
+\renewcommand{\cftsecpagefont}{\normalfont}
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecaftersnum}{.}
+\renewcommand{\cftbeforesecskip}{0em}
+
+\renewcommand{\cftsubsecfont}{\normalfont}
+\renewcommand{\cftsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsecaftersnum}{.}
+\renewcommand{\cftbeforesubsecskip}{0em}
+
+\renewcommand{\cftsubsubsecfont}{\normalfont}
+\renewcommand{\cftsubsubsecpagefont}{\normalfont}
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsubsubsecaftersnum}{.}
+\renewcommand{\cftbeforesubsubsecskip}{0em}
+
+% -- figures --
+\usepackage{graphicx}
+\usepackage{float}
+
+\usepackage[
+    font=small,
+    labelsep=endash,
+]{caption}
+\captionsetup[table]{singlelinecheck=off}
+
+\addto\captionsrussian{\renewcommand{\figurename}{Рисунок}}
+
+% -- tables --
+\usepackage{booktabs}
+
+\usepackage{tabularx}
+\usepackage{xltabular}
+
+\usepackage{ltablex}
+\keepXColumns
+
+\usepackage{multirow}
+
+\usepackage[table]{xcolor}
+\usepackage{colortbl}
+\definecolor{table-gray}{gray}{0.5}
+\definecolor{table-lightgray}{gray}{0.75}
+
+% -- math --
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{physics}
+\usepackage{interval}
+\usepackage{bm}
+
+% -- hyperlinks --
+% !!! toc hyperref does NOT work !!!
+\usepackage[
+    colorlinks=false,
+    unicode=true,
+    hidelinks=true,
+    bookmarks,
+    hypertexnames=false,
+    % draft,
+]{hyperref}
+
+% \usepackage{bookmarks}
+\usepackage{bookmark}
+
+% -- bibliography --
+\usepackage[
+    backend=biber,
+    natbib=true,
+    style=gost-numeric,
+    defernumbers=true,
+]{biblatex}
+
+\setlength\bibparsep{0em}
+
+% -- misc --
+\sloppy
+
+\usepackage{pdflscape}
+
+\usepackage{enumitem}
+\setlist{nosep}
+
+\newcommand{\Item}{\item[\textbullet]}
+
+\usepackage{listings}
+\usepackage{lstautogobble}
+
+\lstset{
+  language=Python,
+  frame=tb,
+  basicstyle=\scriptsize\ttfamily,
+  commentstyle=\color{green},
+  stringstyle=\color{red},
+  tabsize=4,
+  numbers=left,
+  showstringspaces=false,
+  keywordstyle=\color{blue},
+  autogobble=true
+}
+
+% -- other --
+\usepackage{lipsum}

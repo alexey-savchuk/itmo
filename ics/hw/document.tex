@@ -1,0 +1,39 @@
+% !TeX program = xelatex
+
+\documentclass[
+    a4paper,
+    14pt,
+    twoside,
+]{extarticle}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\include{titlepage.tex}
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+\section*{\MakeUppercase{Введение}}\label{sec:introduction}
+\addcontentsline{toc}{section}{Введение}
+\input{contents/00_intoduction.tex}
+\input{contents/01_task.tex}
+
+\newpage
+\input{contents/02_patterns.tex}
+
+\newpage
+\section*{\MakeUppercase{Заключение}}\label{sec:conclusion}
+\addcontentsline{toc}{section}{Заключение}
+\input{contents/99_conclusion.tex}
+
+\newpage
+\section*{Приложения А. Текст программы}
+\addcontentsline{toc}{section}{Приложения А}
+\lstinputlisting[caption={iterator.py}]{patterns/iterator.py}
+\lstinputlisting[caption={decorator.py}]{patterns/decorator.py}
+\lstinputlisting[caption={builder+strategy.py}]{patterns/builder+strategy.py}
+
+\end{document}

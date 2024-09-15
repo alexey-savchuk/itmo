@@ -1,0 +1,38 @@
+% !TeX program = xelatex
+
+\documentclass[
+    a4paper,
+    14pt,
+    twoside,
+]{extarticle}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\include{titlepage.tex}
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+\section*{\MakeUppercase{Введение}}\label{sec:introduction}
+\addcontentsline{toc}{section}{Введение}
+\input{contents/00_intoduction.tex}
+\input{contents/01_task.tex}
+
+\newpage
+\section{Создание объектной модели на основе шаблонов GRASP}
+\input{contents/02_sequence.tex}
+\input{contents/03_class.tex}
+
+\newpage
+\section{Создание объектной модели на основе методологии IDEF4}
+\input{contents/04_idef4.tex}
+
+\newpage
+\section*{\MakeUppercase{Заключение}}\label{sec:conclusion}
+\addcontentsline{toc}{section}{Заключение}
+\input{contents/99_conclusion.tex}
+
+\end{document}

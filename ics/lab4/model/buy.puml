@@ -1,0 +1,52 @@
+@startuml
+
+actor User
+participant "Ticket\nController" as TicketSVC
+database "DB" as DB
+
+User -> TicketSVC : start buying ticket\nfor the chosen route
+activate TicketSVC
+activate User
+
+TicketSVC -> DB : read possible passengers' data
+activate DB
+
+DB --> TicketSVC : return possible passengers' data
+deactivate DB
+
+TicketSVC --> User : return possible passengers' data
+deactivate TicketSVC
+
+User -> TicketSVC : submit chosen passengers' data
+activate TicketSVC
+
+User -> TicketSVC : submit info about season ticket
+User -> TicketSVC : submit info about payment method
+
+TicketSVC -> TicketSVC : create payment request
+
+TicketSVC --> User : ask for confirmation
+
+User -> TicketSVC : confirm payment
+
+TicketSVC -> TicketSVC : process payment
+
+alt success
+
+    TicketSVC -> DB : write ticket
+    activate DB
+
+    DB --> TicketSVC : done
+    deactivate DB
+
+    TicketSVC --> User : return ticket
+
+else failure
+
+    TicketSVC --> User : should try again
+    deactivate TicketSVC
+    deactivate User
+
+end
+
+@enduml

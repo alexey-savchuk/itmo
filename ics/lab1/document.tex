@@ -1,0 +1,47 @@
+% !TeX program = xelatex
+
+\documentclass[
+    a4paper,
+    14pt,
+    twoside,
+]{extarticle}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\include{titlepage.tex}
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+\section*{\MakeUppercase{Введение}}\label{sec:introduction}
+\addcontentsline{toc}{section}{Введение}
+\input{contents/00_intoduction.tex}
+
+\newpage
+\section{Требования на создание системы}
+\input{contents/01_task.tex}
+\input{contents/02_concept.tex}
+\input{contents/03_users.tex}
+\input{contents/04_user_stories.tex}
+\input{contents/05_requirements.tex}
+
+\section{Функциональная модель}
+\input{contents/06_model.tex}
+
+\newpage
+\section*{\MakeUppercase{Заключение}}\label{sec:conclusion}
+\addcontentsline{toc}{section}{Заключение}
+\input{contents/99_conclusion.tex}
+
+\newpage
+\section*{Приложение А}\label{appendix-1}
+\addcontentsline{toc}{section}{Приложение А}
+
+\setcounter{table}{0}
+\renewcommand{\thetable}{A.\arabic{table}}
+\input{contents/101_requirements.tex}
+
+\end{document}

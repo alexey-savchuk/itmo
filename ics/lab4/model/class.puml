@@ -1,0 +1,74 @@
+@startuml
+
+' top to bottom direction
+left to right direction
+
+abstract BaseUser {
+    +SearchRoutes()
+}
+
+class Guest {
+}
+
+class User {
+    -id
+    -email
+    -password
+    -passengers
+
+    +AddPassenger(passenger)
+    +EditPassenger(id)
+    +BuyTicket(): Ticket
+}
+
+class Ticket {
+    +id
+    +user_id
+    +route
+    +passengers
+    +status
+}
+
+Passenger --* Ticket
+
+Ticket .. User
+Route --* Ticket
+
+class Route {
+    +from
+    +to
+    +time
+    +price
+}
+
+class SystemAdmin {
+    +GetUsers()
+    +GetUser(id)
+    +EditUser(id)
+    +DeleteUser(id)
+    +TimeoutUser(id)
+    +ResetUserPassword(id)
+}
+
+class ContentAdmin {
+    +GetRoutes()
+    +GetRoute(id)
+    +EditRoute(id)
+    +HideRoute(id)
+    +ShowRoute(id)
+    +DeleteRoute(id)
+}
+
+class Passenger {
+    +id
+    +name
+    +identityDocuments
+}
+
+Guest -> BaseUser
+Passenger --* User
+User -> BaseUser
+SystemAdmin -> User
+ContentAdmin -> User
+
+@enduml

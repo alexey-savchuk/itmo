@@ -1,0 +1,98 @@
+@startuml
+
+actor User
+participant "Auth\nController" as AuthSVC
+participant "Notification\nController" as NotificationSVC
+database "DB" as DB
+
+User -> AuthSVC : try to buy a ticket\nfor the chosen route
+activate User
+activate AuthSVC
+
+AuthSVC -> AuthSVC : check auth token
+
+alt user not authenticated
+
+    AuthSVC --> User : ask for authentication
+    ' deactivate AuthSVC
+
+    alt user signs in
+
+        User -> AuthSVC : submit sign in form
+        ' activate AuthSVC
+
+        AuthSVC -> DB : check form data
+        activate DB
+
+        DB --> AuthSVC : return status
+        deactivate DB
+
+        alt success
+
+            AuthSVC -> AuthSVC : generate auth token
+            AuthSVC --> User : return auth token
+
+        else failure
+
+            AuthSVC --> User : ask for authentication again
+            ' deactivate AuthSVC
+
+        end
+
+    else user signs up
+
+        User -> AuthSVC : submit sign up form
+        ' activate AuthSVC
+
+        AuthSVC -> DB : check form data
+        activate DB
+
+        DB --> AuthSVC : return status
+        deactivate DB
+
+        alt success
+
+            User -> AuthSVC : submit passenger info data
+
+
+            AuthSVC -> DB : save passenger info
+            activate DB
+
+            DB --> AuthSVC : done
+            deactivate DB
+
+            AuthSVC -> NotificationSVC : send email with\nverification code
+            activate NotificationSVC
+
+            NotificationSVC --> AuthSVC : done
+            deactivate NotificationSVC
+
+            User -> AuthSVC : submit verification code
+            AuthSVC -> AuthSVC : check verification code
+
+            alt success
+
+                AuthSVC -> AuthSVC : generate auth token
+                AuthSVC --> User : return auth token
+
+            else failure
+
+                AuthSVC --> User : ask for authentication again
+
+            end
+
+        else failure
+
+            User -> AuthSVC : ask for authentication again
+
+        end
+
+    end
+
+end
+
+User -> AuthSVC : buy a ticket for\nthe chosen route
+deactivate User
+deactivate AuthSVC
+
+@enduml

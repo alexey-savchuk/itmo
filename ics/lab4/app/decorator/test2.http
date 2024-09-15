@@ -1,0 +1,2 @@
+POST http://localhost:8080/ticket
+Cookie: bus-ticket-sales=QWERTY

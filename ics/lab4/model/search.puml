@@ -1,0 +1,23 @@
+@startuml
+
+actor User
+participant "Route\nController" as RouteSVC
+database "DB" as DB
+
+User -> RouteSVC : search\nroutes
+activate RouteSVC
+activate User
+
+RouteSVC -> RouteSVC : process search\narguments
+RouteSVC -> RouteSVC : create query from\narguments
+RouteSVC -> DB : read routes\nfrom DB
+activate DB
+
+DB --> RouteSVC : return routes
+deactivate DB
+
+RouteSVC --> User : return routes
+deactivate User
+deactivate RouteSVC
+
+@enduml

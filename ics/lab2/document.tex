@@ -1,0 +1,32 @@
+% !TeX program = xelatex
+
+\documentclass[
+    a4paper,
+    14pt,
+    twoside,
+]{extarticle}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\include{titlepage.tex}
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+\section*{\MakeUppercase{Введение}}\label{sec:introduction}
+\addcontentsline{toc}{section}{Введение}
+\input{contents/00_intoduction.tex}
+
+\newpage
+\section{Диаграммы потоков данных для отдельных сценариев работы системы}
+\input{contents/02_model.tex}
+
+\newpage
+\section*{\MakeUppercase{Заключение}}\label{sec:conclusion}
+\addcontentsline{toc}{section}{Заключение}
+\input{contents/99_conclusion.tex}
+
+\end{document}

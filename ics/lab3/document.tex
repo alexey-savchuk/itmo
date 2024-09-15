@@ -1,0 +1,83 @@
+% !TeX program = xelatex
+
+\documentclass[
+    a4paper,
+    14pt,
+    % twoside,
+]{extarticle}
+
+\input{preamble.tex}
+
+\begin{document}
+
+\include{titlepage.tex}
+\setcounter{page}{2}
+
+\tableofcontents
+
+\newpage
+\section*{\MakeUppercase{Введение}}\label{sec:introduction}
+\addcontentsline{toc}{section}{Введение}
+\input{contents/00_intoduction.tex}
+\input{contents/01_task.tex}
+
+\newpage
+\section{Результаты выполнения заданий}
+Результаты выполнения заданий приведены в приложениях А, Б и В.
+
+\newpage
+\section*{\MakeUppercase{Заключение}}\label{sec:conclusion}
+\addcontentsline{toc}{section}{Заключение}
+\input{contents/99_conclusion.tex}
+
+\newcommand{\Appendix}[2]{
+    \section*{Приложение #1. #2}\label{appendix-1}
+    \addcontentsline{toc}{section}{Приложение #1. #2}
+
+    \setcounter{section}{0}
+    \setcounter{subsection}{0}
+    \setcounter{subsubsection}{0}
+    \setcounter{table}{0}
+    \setcounter{figure}{0}
+
+    \renewcommand{\thesection}{#1.\arabic{section}}
+    \renewcommand{\thesubsection}{#1.\arabic{section}.\arabic{subsection}}
+    \renewcommand{\thesubsubsection}{#1.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+    \renewcommand{\thetable}{#1.\arabic{table}}
+    \renewcommand{\thefigure}{#1.\arabic{figure}}
+}
+
+\newcounter{ReqID}
+\newcounter{TaskID}
+
+\newcommand{\ReqID}{
+    \stepcounter{ReqID}
+    \setcounter{TaskID}{0}
+    \arabic{ReqID}
+}
+\newcommand{\TaskID}{
+    \stepcounter{TaskID}
+    \arabic{ReqID}.\arabic{TaskID}
+}
+
+\newcommand{\Req}[1]{%
+    \multirow[t]{100}{=}{\ReqID} &%
+    \multirow[t]{100}{=}{#1}%
+}
+\newcommand{\ReqStub}{&}
+\newcommand{\Task}[1]{\TaskID & {#1}}
+\newcommand{\ReqTaskStub}{& & &}
+
+\newpage
+\Appendix{А}{Документ-концепция}
+\input{contents/02_az.tex}
+
+\newpage
+\Appendix{Б}{Спецификация требований к ПО}
+\input{contents/03_buki.tex}
+
+\newpage
+\Appendix{В}{Техническое задание}
+\input{contents/04_vedi.tex}
+
+\end{document}

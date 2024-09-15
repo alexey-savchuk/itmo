@@ -1,0 +1,25 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.162 Electron/32.1.2 Safari/537.36" version="24.7.8">
+  <diagram name="Page-1" id="P5wW9S1lYLrC5-m_l4sB">
+    <mxGraphModel dx="413" dy="699" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="uo-nHqBHm8gi3DnNTOrJ-7" value="&lt;div style=&quot;&quot;&gt;&amp;nbsp; User&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;hr&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&amp;nbsp; {M} AddPassenger(passenger)&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; {M} EditPassenger(id)&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&amp;nbsp; {M} BuyTicket(): Ticket&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;hr&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;div&gt;&amp;nbsp; {A} id&lt;/div&gt;&lt;div&gt;&amp;nbsp; {A} email&lt;/div&gt;&lt;div&gt;&amp;nbsp; {A} password&lt;/div&gt;&lt;div&gt;&amp;nbsp; {A} passengers&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="120" y="240" width="180" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="uo-nHqBHm8gi3DnNTOrJ-9" value="&lt;div style=&quot;&quot;&gt;&lt;div&gt;&amp;nbsp; SystemAdmin&lt;/div&gt;&lt;div&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} GetUsers()&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} GetUser(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} EditUser(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} DeleteUser(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} TimeoutUser(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} ResetUserPassword(id)&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="180" y="460" width="160" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="uo-nHqBHm8gi3DnNTOrJ-10" value="&lt;div style=&quot;&quot;&gt;&lt;div&gt;&amp;nbsp; ContentAdmin&lt;/div&gt;&lt;div&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M}&amp;nbsp;GetRoutes(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M}&amp;nbsp;GetRoute(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} EditRoute(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M} HideRoute(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M}&amp;nbsp;ShowRoute(id)&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M}&amp;nbsp;DeleteRoute(id)&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="380" y="520" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="uo-nHqBHm8gi3DnNTOrJ-11" value="Guest" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="412.5" y="350" width="55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="uo-nHqBHm8gi3DnNTOrJ-14" value="&lt;div style=&quot;&quot;&gt;&lt;div&gt;&amp;nbsp; BaseUser&lt;/div&gt;&lt;div&gt;&lt;hr&gt;&lt;/div&gt;&lt;div&gt;&amp;nbsp; {M}&amp;nbsp;SearchRoutes()&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="340" y="230" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
